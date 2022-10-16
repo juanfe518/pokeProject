@@ -15,7 +15,7 @@ export class Pokemon{
     // location_area_encounters = "";
     // moves = [];
     // past_Types = [];
-    // sprites = {};
+    sprites = {};
     // species = {};
     // stats = [];
     // types = [];

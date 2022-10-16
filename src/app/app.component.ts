@@ -9,16 +9,23 @@ import { PokeServiceService } from './services/poke-service.service';
 })
 export class AppComponent {
   title = 'ProyectoPoke';
-
+  
 
   pokemon: Pokemon;
+  urlImage = "";
+  urlImage2 = "";
+  urlImage3 = "";
 
   constructor(
     private pokeService: PokeServiceService
   ){}
 
   getPokemon(id: any): void{
-    this.pokeService.getPokemonDetail(id).subscribe(pokemon => this.pokemon = pokemon);
+    this.pokeService.getPokemonDetail(id).subscribe((pokemon: any) => {
+      this.pokemon = pokemon,
+      this.urlImage = pokemon.sprites.front_default,
+      this.urlImage2 = pokemon.sprites.other.home.front_default,
+      this.urlImage3 = pokemon.sprites.other.dream_world.front_default});
   }
 
 
