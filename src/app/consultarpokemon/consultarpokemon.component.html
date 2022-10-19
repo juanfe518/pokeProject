@@ -1,23 +1,26 @@
-<input class="form-control" #pokemonn placeholder="Buscar pokemon"/>
-<button (click)="getPokemon(pokemonn.value)" >Consultar</button>
+<div class="container">
+  <div class="col-4">
+  <input class="form-control" #pokemonn placeholder="Buscar pokemon"/>
+  </div>
+  <button class="btn btn-primary" (click)="getPokemon(pokemonn.value)" >Consultar</button>
 
-<div class="card-header">
-  <table class="table table-striped">
-    <thead class="table-darh">
+
+  <table class="table">
+    <thead>
       <tr>
-        <th>Nombre</th>
-        <th>Nombre</th>
-        <th>experiencia básica</th>
-        <th>Orden</th>
-        <th>Altura</th>
-        <th>Foto pokemon Clasico</th>
-        <th>Foto pokemon 3D</th>
-        <th>Foto pokemon Dream wordl</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">experiencia básica</th>
+        <th scope="col">Orden</th>
+        <th scope="col">Altura</th>
+        <th scope="col">Foto pokemon Clasico</th>
+        <th scope="col">Foto pokemon 3D</th>
+        <th scope="col">Foto pokemon Dream wordl</th>
       </tr>
     </thead>
-    <tbody>
+    <tbody class="table-group-divider">
       <tr *ngIf="pokemon">
-        <td>{{ pokemon.id }}</td>
+        <td scope="row">{{ pokemon.id }}</td>
         <td>{{ pokemon.name }}</td>
         <td>{{ pokemon.base_experience }}</td>
         <td>{{ pokemon.order }}</td>
